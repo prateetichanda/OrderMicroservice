@@ -1,0 +1,12 @@
+memory: 1GB
+instances: 1
+applications:
+- name: order-microservice
+  path: D:/spring/OrderMicroservice/target/OrderMicroservice-0.0.1-SNAPSHOT.jar
+  routes:
+    - route: order-microservice.cfapps.io
+  services:
+  - mydb2
+  
+  env:
+    CUSTOMER_URL: http://order-microservice.cfapps.io/customer
